@@ -26,6 +26,7 @@ angular.module('pianoforteApp', [
       LASTNAME: 'Lastname',
       NAME: 'Name',
       NICKNAME: 'Nickname',
+      PERSONAL_INFO: 'Personal information',
       TEL: 'Tel.',
       VIEW: 'View'
     });

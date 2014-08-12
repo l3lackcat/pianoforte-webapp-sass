@@ -20,9 +20,7 @@
       <div class="portlet light bordered">
         <div class="portlet-title">
           <div class="caption">
-            <i class="icon-magnifier font-green-jungle"></i>
-            <span class="caption-subject bold font-green-jungle uppercase">{{ 'FIND_TEACHERS' | translate }}</span>
-            <span class="caption-helper"></span>
+            <span class="caption-subject bold font-green-sharp uppercase">{{ 'FIND_TEACHERS' | translate }}</span>
           </div>
           <div class="inputs">
             <div class="portlet-input input-inline input-small">
@@ -55,8 +53,9 @@
                     <td>{{ teacher.nickname }}</td>
                     <td><p class="phone" ng-repeat="phone in teacher.phones">{{ phone.value | displayedPhoneNumber }}</p></td>
                     <td class="text-right">
-                      <span class="status status-{{teacher.status}}"><i class="fa fa-circle"></i></span>
-                      <a href="/teachers/{{teacher.id}}" class="link-icon" title="{{ 'VIEW' | translate }}"><i class="fa fa-bars"></i></a>
+                      <a href="/teachers/{{teacher.id}}" class="link-icon status-{{ teacher.status }}" title="{{ 'VIEW' | translate }}">
+                        <i class="fa fa-bars"></i>
+                      </a>
                     </td>
                   </tr>
                 </tbody>

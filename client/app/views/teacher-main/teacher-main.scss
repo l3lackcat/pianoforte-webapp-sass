@@ -9,21 +9,33 @@
         .table {
           margin-bottom: 0px;
 
-          .phone {
-            margin: 0;
+          thead {
+            th {
+              font-weight: bold;
+            }
           }
 
-          .status {
-            &.status-1 { color: #5CB85C; }
-            &.status-2 { color: #F0AD4E; }
-            &.status-4 { color: #D9534F; }
-          }
+          tbody {
+            .phone {
+              margin: 0;
+            }
 
-          .link-icon {
-            margin-left: 10px;
+            .status {
+              &.status-1 { color: #5CB85C; }
+              &.status-2 { color: #F0AD4E; }
+              &.status-4 { color: #D9534F; }
+            }
 
-            &:first-child {
-              margin-left: 0px;
+            .link-icon {
+              margin-left: 5px;
+
+              &.status-1 { color: #5CB85C; }
+              &.status-2 { color: #F0AD4E; }
+              &.status-4 { color: #D9534F; }
+
+              &:first-child {
+                margin-left: 0px;
+              }
             }
           }
         }
