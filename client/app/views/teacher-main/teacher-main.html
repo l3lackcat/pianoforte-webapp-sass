@@ -1,0 +1,75 @@
+<div class="page-content" ng-init="initialize()">
+  <!-- BEGIN PAGE HEADER-->
+  <h3 class="page-title">Teachers</h3>
+  <div class="page-bar">
+    <ul class="page-breadcrumb">
+      <li>
+        <i class="fa fa-home"></i>
+        <a href="/">Home</a>
+        <i class="fa fa-angle-right"></i>
+      </li>
+      <li>
+        <a href="">Teachers</a>
+      </li>
+    </ul>
+  </div>
+  <!-- END PAGE HEADER-->
+  <!-- BEGIN PAGE CONTENT-->
+  <div class="row">
+    <div class="col-md-12">
+      <div class="portlet light bordered">
+        <div class="portlet-title">
+          <div class="caption">
+            <i class="icon-magnifier font-green-jungle"></i>
+            <span class="caption-subject bold font-green-jungle uppercase">{{ 'FIND_TEACHERS' | translate }}</span>
+            <span class="caption-helper"></span>
+          </div>
+          <div class="inputs">
+            <div class="portlet-input input-inline input-small">
+              <div class="input-icon right">
+                <i class="icon-magnifier"></i>
+                <input type="text" class="form-control input-circle" placeholder="search..." ng-model="filter.text">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="portlet-body">
+          <div class="scroller">
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>{{ 'ID' | translate }}</th>
+                    <th>{{ 'NAME' | translate }}</th>
+                    <th>{{ 'NICKNAME' | translate }}</th>
+                    <th>{{ 'TEL' | translate }}</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="teacher in filter.result | orderBy:'id' | startFrom:(currentPage-1)*showPerPage | limitTo:showPerPage">
+                    <td>{{ ((currentPage - 1) * showPerPage) + $index + 1 }}</td>
+                    <td>{{ teacher.id }}</td>
+                    <td>{{ teacher.firstname + ' ' + teacher.lastname }}</td>
+                    <td>{{ teacher.nickname }}</td>
+                    <td><p class="phone" ng-repeat="phone in teacher.phones">{{ phone.value | displayedPhoneNumber }}</p></td>
+                    <td class="text-right">
+                      <span class="status status-{{teacher.status}}"><i class="fa fa-circle"></i></span>
+                      <a href="/teachers/{{teacher.id}}" class="link-icon" title="{{ 'VIEW' | translate }}"><i class="fa fa-bars"></i></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="text-center" ng-show="filter.result.length > showPerPage">
+              <pagination boundary-links="false" total-items="filter.result.length" items-per-page="showPerPage" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" ng-hide="totalPages == 1"></pagination>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END PAGE CONTENT-->
+</div>

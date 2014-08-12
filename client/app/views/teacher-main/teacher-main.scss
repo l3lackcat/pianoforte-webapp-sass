@@ -1,0 +1,33 @@
+.page-content {
+  .portlet {
+    &:last-child {
+      margin-bottom: 0px;
+    }
+
+    .portlet-body {
+      .table-responsive {
+        .table {
+          margin-bottom: 0px;
+
+          .phone {
+            margin: 0;
+          }
+
+          .status {
+            &.status-1 { color: #5CB85C; }
+            &.status-2 { color: #F0AD4E; }
+            &.status-4 { color: #D9534F; }
+          }
+
+          .link-icon {
+            margin-left: 10px;
+
+            &:first-child {
+              margin-left: 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

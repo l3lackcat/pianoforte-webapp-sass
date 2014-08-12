@@ -1,0 +1,57 @@
+$icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+$fa-font-path: "/bower_components/font-awesome/fonts";
+
+@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+@import 'font-awesome/scss/font-awesome';
+
+@import 'themes/metronic/sass/admin/layout/layout.scss';
+@import 'themes/metronic/sass/admin/layout/themes/darkblue.scss';
+@import 'themes/metronic/sass/admin/pages/login.scss';
+@import 'themes/metronic/sass/global/components.scss';
+@import 'themes/metronic/sass/global/plugins.scss';
+
+/**
+ * App-wide Styles
+ */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+// Component styles are injected through grunt
+// injector
+@import 'account/login/login.scss';
+@import 'admin/admin.scss';
+@import 'main/main.scss';
+@import 'views/book-main/book-main.scss';
+@import 'views/cd-main/cd-main.scss';
+@import 'views/course-main/course-main.scss';
+@import 'views/dashboard/dashboard.scss';
+@import 'views/login/login.scss';
+@import 'views/student-main/student-main.scss';
+@import 'views/teacher-main/teacher-main.scss';
+@import 'views/teacher/teacher.scss';
+// endinjector
+
+// Hack
+.page-header {
+  &.navbar {
+    .page-logo {
+      .logo-default { margin: 0; }
+    }
+
+    .menu-toggler {
+      background-image: url(../assets/images/sidebar_toggler_icon_#{$theme-name}.png);
+    }
+  }
+}
+
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover,
+.page-sidebar {
+  .sidebar-toggler {
+    background: url(../assets/images/sidebar_inline_toggler_icon_#{$theme-name}.jpg); 
+  }
+}
