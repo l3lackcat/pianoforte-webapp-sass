@@ -1,0 +1,115 @@
+<div class="portlet light bordered teacher-address-info">
+  <div class="portlet-title">
+    <div class="caption font-green-sharp">
+      <span class="caption-subject bold uppercase">{{ 'LABEL.ADDRESS_INFO' | translate }}</span>
+    </div>
+    <div class="actions" ng-hide="isEditMode">
+      <a href="" class="btn btn-circle btn-default btn-sm" ng-click="startEditting()">
+        <i class="fa fa-pencil"></i>
+        {{ 'LABEL.EDIT' | translate }}
+      </a>
+    </div>
+  </div>
+  <div class="portlet-body form">
+    <!-- View mode -->
+    <form ng-hide="isEditMode" role="form" class="form-horizontal form-row-seperated form-view">
+      <div class="form-body">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label class="control-label col-md-5">{{ 'LABEL.BUILDING_NAME' | translate }}:</label>
+              <div class="col-md-7">
+                <p class="form-control-static"><strong>{{ address.buildingName }}</strong></p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-md-5">{{ 'LABEL.STREET_ADDRESS' | translate }}:</label>
+              <div class="col-md-7">
+                <p class="form-control-static"><strong>{{ address.streetAddress }}</strong></p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-md-5">{{ 'LABEL.SUBDISTRICT' | translate }}:</label>
+              <div class="col-md-7">
+                <p class="form-control-static"><strong>{{ address.subdistrict }}</strong></p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-md-5">{{ 'LABEL.DISTRICT' | translate }}:</label>
+              <div class="col-md-7">
+                <p class="form-control-static"><strong>{{ address.district }}</strong></p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-md-5">{{ 'LABEL.PROVINCE' | translate }}:</label>
+              <div class="col-md-7">
+                <p class="form-control-static"><strong>{{ address.province }}</strong></p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-md-5">{{ 'LABEL.ZIP_CODE' | translate }}:</label>
+              <div class="col-md-7">
+                <p class="form-control-static"><strong>{{ address.zipCode }}</strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <!-- Edit mode -->
+    <form ng-show="isEditMode" role="form" class="form-horizontal form-row-seperated form-edit">
+      <div class="form-body">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label class="control-label col-md-5">{{ 'LABEL.BUILDING_NAME' | translate }}:</label>
+              <div class="col-md-7">
+                <input type="text" class="form-control" placeholder="{{ 'LABEL.BUILDING_NAME' | translate }}" ng-model="tempAddress.buildingName" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-md-5">{{ 'LABEL.STREET_ADDRESS' | translate }}:</label>
+              <div class="col-md-7">
+                <input type="text" class="form-control" placeholder="{{ 'LABEL.STREET_ADDRESS' | translate }}" ng-model="tempAddress.streetAddress" />
+                <!-- <span class="help-block"></span> -->
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-md-5">{{ 'LABEL.ZIP_CODE' | translate }}:</label>
+              <div class="col-md-7">
+                <input type="text" class="form-control" placeholder="{{ 'LABEL.ZIP_CODE' | translate }}" ng-model="tempAddress.zipCode" />
+                <!-- <span class="help-block"></span> -->
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-md-5">{{ 'LABEL.PROVINCE' | translate }}:</label>
+              <div class="col-md-7">
+                <input type="text" class="form-control" placeholder="{{ 'LABEL.PROVINCE' | translate }}" ng-model="tempAddress.province" />
+                <!-- <span class="help-block"></span> -->
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-md-5">{{ 'LABEL.DISTRICT' | translate }}:</label>
+              <div class="col-md-7">
+                <input type="text" class="form-control" placeholder="{{ 'LABEL.DISTRICT' | translate }}" ng-model="tempAddress.district" />
+                <!-- <span class="help-block"></span> -->
+              </div>
+            </div>
+            <div class="form-group last">
+              <label class="control-label col-md-5">{{ 'LABEL.SUBDISTRICT' | translate }}:</label>
+              <div class="col-md-7">
+                <input type="text" class="form-control" placeholder="{{ 'LABEL.SUBDISTRICT' | translate }}" ng-model="tempAddress.subdistrict" />
+                <!-- <span class="help-block"></span> -->
+              </div>
+            </div>
+            <div class="form-actions text-right">
+              <button type="submit" class="btn blue">{{ 'LABEL.SUBMIT' | translate }}</button>
+              <button type="button" class="btn default" ng-click="stopEditting()">{{ 'LABEL.CANCEL' | translate }}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

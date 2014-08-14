@@ -20,7 +20,7 @@
       <div class="portlet light bordered">
         <div class="portlet-title">
           <div class="caption">
-            <span class="caption-subject bold font-green-sharp uppercase">{{ 'FIND_TEACHERS' | translate }}</span>
+            <span class="caption-subject bold font-green-sharp uppercase">{{ 'LABEL.FIND_TEACHERS' | translate }}</span>
           </div>
           <div class="inputs">
             <div class="portlet-input input-inline input-small">
@@ -38,10 +38,10 @@
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>{{ 'ID' | translate }}</th>
-                    <th>{{ 'NAME' | translate }}</th>
-                    <th>{{ 'NICKNAME' | translate }}</th>
-                    <th>{{ 'TEL' | translate }}</th>
+                    <th>{{ 'LABEL.ID' | translate }}</th>
+                    <th>{{ 'LABEL.NAME' | translate }}</th>
+                    <th>{{ 'LABEL.NICKNAME' | translate }}</th>
+                    <th>{{ 'LABEL.TEL' | translate }}</th>
                     <th></th>
                   </tr>
                 </thead>
@@ -53,7 +53,7 @@
                     <td>{{ teacher.nickname }}</td>
                     <td><p class="phone" ng-repeat="phone in teacher.phones">{{ phone.value | displayedPhoneNumber }}</p></td>
                     <td class="text-right">
-                      <a href="/teachers/{{teacher.id}}" class="link-icon status-{{ teacher.status }}" title="{{ 'VIEW' | translate }}">
+                      <a href="/teachers/{{teacher.id}}" class="link-icon status-{{ teacher.status }}" title="{{ 'LABEL_VIEW' | translate }}">
                         <i class="fa fa-bars"></i>
                       </a>
                     </td>

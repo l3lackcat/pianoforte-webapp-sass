@@ -1,25 +1,101 @@
-<div class="portlet light bordered">
+<div class="portlet light bordered teacher-personal-info">
   <div class="portlet-title">
     <div class="caption font-green-sharp">
-      <span class="caption-subject bold uppercase">{{ 'PERSONAL_INFO' | translate }}</span>
+      <span class="caption-subject bold uppercase">{{ 'LABEL.PERSONAL_INFO' | translate }}</span>
     </div>
-    <div class="actions">
-      <a href="#" class="btn btn-circle btn-default btn-sm">
-      <i class="fa fa-pencil"></i> Edit </a>
-      <a href="#" class="btn btn-circle btn-default btn-sm">
-      <i class="fa fa-plus"></i> Add </a>
+    <div class="actions" ng-hide="isEditMode">
+      <a href="" class="btn btn-circle btn-default btn-sm" ng-click="startEditting()">
+        <i class="fa fa-pencil"></i>
+        {{ 'LABEL.EDIT' | translate }}
+      </a>
     </div>
   </div>
-  <div class="portlet-body">
-    <form role="form">
+  <div class="portlet-body form">
+    <!-- View mode -->
+    <form ng-hide="isEditMode" role="form" class="form-horizontal form-row-seperated form-view">
       <div class="form-body">
-        <div class="form-group">
-          <label>{{ 'ID' | translate }}</label>
-          <input type="text" class="form-control" placeholder="ID" ng-model="1001" readonly />
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label class="control-label col-md-5">{{ 'LABEL.ID' | translate }}:</label>
+              <div class="col-md-7">
+                <p class="form-control-static"><strong>{{ teacher.id }}</strong></p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-md-5">{{ 'LABEL.FIRSTNAME' | translate }}:</label>
+              <div class="col-md-7">
+                <p class="form-control-static"><strong>{{ teacher.firstname }}</strong></p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-md-5">{{ 'LABEL.LASTNAME' | translate }}:</label>
+              <div class="col-md-7">
+                <p class="form-control-static"><strong>{{ teacher.lastname }}</strong></p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-md-5">{{ 'LABEL.NICKNAME' | translate }}:</label>
+              <div class="col-md-7">
+                <p class="form-control-static"><strong>{{ teacher.nickname }}</strong></p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-md-5">{{ 'LABEL.STATUS' | translate }}:</label>
+              <div class="col-md-7">
+                <p class="form-control-static status-{{ teacher.status }}"><strong>{{ teacher.status | displayedStatus : 'Status' }}</strong></p>
+              </div>
+            </div>
+          </div>
         </div>
-      <div class="form-actions">
-        <button type="submit" class="btn blue">Submit</button>
-        <button type="button" class="btn default">Cancel</button>
+      </div>
+    </form>
+
+    <!-- Edit mode -->
+    <form ng-show="isEditMode" role="form" class="form-horizontal form-row-seperated form-edit">
+      <div class="form-body">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label class="control-label col-md-5">{{ 'LABEL.ID' | translate }}:</label>
+              <div class="col-md-7">
+                <input type="text" class="form-control" placeholder="ID" ng-model="tempTeacher.id" readonly />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-md-5">{{ 'LABEL.FIRSTNAME' | translate }}:</label>
+              <div class="col-md-7">
+                <input type="text" class="form-control" placeholder="{{ 'LABEL.FIRSTNAME' | translate }}" ng-model="tempTeacher.firstname" />
+                <!-- <span class="help-block"></span> -->
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-md-5">{{ 'LABEL.LASTNAME' | translate }}:</label>
+              <div class="col-md-7">
+                <input type="text" class="form-control" placeholder="ID" ng-model="tempTeacher.lastname" />
+                <!-- <span class="help-block"></span> -->
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-md-5">{{ 'LABEL.NICKNAME' | translate }}:</label>
+              <div class="col-md-7">
+                <input type="text" class="form-control" placeholder="{{ 'LABEL.NICKNAME' | translate }}" ng-model="tempTeacher.nickname" />
+                <!-- <span class="help-block"></span> -->
+              </div>
+            </div>
+            <div class="form-group last">
+              <label class="control-label col-md-5">{{ 'LABEL.STATUS' | translate }}:</label>
+              <div class="col-md-7">
+                <input type="text" class="form-control" ng-model="tempTeacher.status" />
+                <!-- <span class="help-block"></span> -->
+              </div>
+            </div>
+            <div class="form-actions text-right">
+              <button type="submit" class="btn blue">{{ 'LABEL.SUBMIT' | translate }}</button>
+              <button type="button" class="btn default" ng-click="stopEditting()">{{ 'LABEL.CANCEL' | translate }}</button>
+            </div>
+          </div>
+        </div>
       </div>
     </form>
   </div>
