@@ -12,7 +12,8 @@ angular.module('pianoforteApp')
       replace: true,
       controller: 'TeacherContactInfoCtrl',
       scope: {
-        teacher: '='
+        contacts: '=',
+        editable: '='
       },
       link: function (scope, element, attrs) {
       }

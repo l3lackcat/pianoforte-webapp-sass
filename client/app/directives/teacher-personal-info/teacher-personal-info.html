@@ -3,7 +3,7 @@
     <div class="caption font-green-sharp">
       <span class="caption-subject bold uppercase">{{ 'LABEL.PERSONAL_INFO' | translate }}</span>
     </div>
-    <div class="actions" ng-hide="isEditMode">
+    <div class="actions" ng-show="editable && !isEditMode">
       <a href="" class="btn btn-circle btn-default btn-sm" ng-click="startEditting()">
         <i class="fa fa-pencil"></i>
         {{ 'LABEL.EDIT' | translate }}
@@ -12,7 +12,7 @@
   </div>
   <div class="portlet-body form">
     <!-- View mode -->
-    <form ng-hide="isEditMode" role="form" class="form-horizontal form-row-seperated form-view">
+    <form ng-hide="isEditMode" role="form" class="form-horizontal">
       <div class="form-body">
         <div class="row">
           <div class="col-md-12">
@@ -52,7 +52,7 @@
     </form>
 
     <!-- Edit mode -->
-    <form ng-show="isEditMode" role="form" class="form-horizontal form-row-seperated form-edit">
+    <form ng-show="isEditMode" role="form" class="form-horizontal">
       <div class="form-body">
         <div class="row">
           <div class="col-md-12">
@@ -90,12 +90,12 @@
                 <!-- <span class="help-block"></span> -->
               </div>
             </div>
-            <div class="form-actions text-right">
-              <button type="submit" class="btn blue">{{ 'LABEL.SUBMIT' | translate }}</button>
-              <button type="button" class="btn default" ng-click="stopEditting()">{{ 'LABEL.CANCEL' | translate }}</button>
-            </div>
           </div>
         </div>
+      </div>
+      <div class="form-actions text-right">
+        <button type="submit" class="btn blue">{{ 'LABEL.SUBMIT' | translate }}</button>
+        <button type="button" class="btn default" ng-click="stopEditting()">{{ 'LABEL.CANCEL' | translate }}</button>
       </div>
     </form>
   </div>

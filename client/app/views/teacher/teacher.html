@@ -20,13 +20,16 @@
   <!-- END PAGE HEADER-->
   <!-- BEGIN PAGE CONTENT-->
   <div class="row">
-    <div class="col-md-6">
-      <teacher-personal-info data-teacher="teacher"></teacher-personal-info>
-      <teacher-contact-info data-teacher="teacher"></teacher-contact-info>
+    <div class="col-md-12">
+      <div class="col-md-6">
+        <teacher-personal-info data-teacher="teacher" data-editable="true"></teacher-personal-info>
+        <teacher-contact-info data-contacts="teacher.contacts" data-editable="false"></teacher-contact-info>
+      </div>
+      <div class="col-md-6">
+        <address-info data-address="teacher.address" data-editable="true"></address-info>
+      </div>
     </div>
-    <div class="col-md-6">
-      <teacher-address-info data-teacher="teacher"></teacher-address-info>
-    </div>
+        
   </div>
   <!-- END PAGE CONTENT-->
 </div>

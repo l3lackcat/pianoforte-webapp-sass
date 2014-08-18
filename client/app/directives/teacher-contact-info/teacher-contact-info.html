@@ -3,7 +3,7 @@
     <div class="caption font-green-sharp">
       <span class="caption-subject bold uppercase">{{ 'LABEL.CONTACT_INFO' | translate }}</span>
     </div>
-    <div class="actions" ng-hide="isEditMode">
+    <div class="actions" ng-show="editable && !isEditMode">
       <a href="" class="btn btn-circle btn-default btn-sm" ng-click="isEditMode = true">
         <i class="fa fa-pencil"></i>
         {{ 'LABEL.EDIT' | translate }}
@@ -11,15 +11,22 @@
     </div>
   </div>
   <div class="portlet-body form">
-    <form ng-hide="isEditMode" role="form" class="form-horizontal form-row-seperated">
+    <form ng-hide="isEditMode" role="form" class="form-horizontal">
       <div class="form-body">
         <div class="row">
           <div class="col-md-12">
-            <h3 class="form-section">{{ 'LABEL.PHONES' | translate }}</h3>
-            <div class="form-group" ng-repeat="phone in teacher.phones">
+            <h3>{{ 'LABEL.PHONES' | translate }}</h3>
+            <div class="form-group" ng-repeat="phone in contacts.phones">
               <label class="control-label col-md-5">{{ phone.label }}:</label>
               <div class="col-md-7">
                 <p class="form-control-static"><strong>{{ phone.value | displayedPhoneNumber }}</strong></p>
+              </div>
+            </div>
+            <h3>{{ 'LABEL.EMAILS' | translate }}</h3>
+            <div class="form-group" ng-repeat="email in contacts.emails">
+              <label class="control-label col-md-5">{{ email.label }}:</label>
+              <div class="col-md-7">
+                <p class="form-control-static"><strong>{{ email.value }}</strong></p>
               </div>
             </div>
           </div>
@@ -27,24 +34,32 @@
       </div>
     </form>
 
-    <form ng-show="isEditMode" role="form" class="form-inline form-row-seperated">
+    <form ng-show="isEditMode" role="form" class="form-horizontal form-row-seperated">
       <div class="form-body">
         <div class="row">
           <div class="col-md-12">
-            <h3 class="form-section">{{ 'LABEL.PHONES' | translate }}</h3>
-            <div ng-repeat="phone in teacher.phones">
-              <div class="form-group">
-                <div class="col-md-5">
+            <h3>{{ 'LABEL.PHONES' | translate }}</h3>
+            <div class="form-group" ng-repeat="phone in contacts.phones">
+              <div class="row">
+                <label class="control-label col-md-5">{{ 'LABEL.CONTACT_LABEL' | translate }}:</label>
+                <div class="col-md-7">
                   <input type="text" class="form-control" placeholder="{{ 'PLACEHOLDER.LABEL' | translate }}" ng-model="phone.label" />
                 </div>
+              </div>
+              <div class="row" style="margin-top: 5px;">
+                <label class="control-label col-md-5">{{ 'LABEL.PHONE_NUMBER' | translate }}:</label>
                 <div class="col-md-7">
                   <input type="text" class="form-control" placeholder="{{ 'PLACEHOLDER.PHONE_NUMBER' | translate }}" ng-model="phone.value" />
                 </div>
               </div>
-            </div>
-            <div class="form-actions text-right">
-              <button type="submit" class="btn blue">{{ 'LABEL.SUBMIT' | translate }}</button>
-              <button type="button" class="btn default" ng-click="isEditMode = false">{{ 'LABEL.CANCEL' | translate }}</button>
+              <div class="row" style="margin-top: 5px;">
+                <label class="control-label col-md-5"></label>
+                <div class="col-md-7">
+                  <div class="checkbox">
+                    <label><div class="checker"><span><input type="checkbox"></span></div> Remember me </label>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

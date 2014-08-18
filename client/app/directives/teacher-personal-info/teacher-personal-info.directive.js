@@ -30,7 +30,8 @@ angular.module('pianoforteApp')
       replace: true,
       controller: 'TeacherPersonalInfoCtrl',
       scope: {
-        teacher: '='
+        teacher: '=',
+        editable: '='
       },
       link: function (scope, element, attrs) {
       }

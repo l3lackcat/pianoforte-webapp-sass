@@ -51,7 +51,7 @@
                     <td>{{ teacher.id }}</td>
                     <td>{{ teacher.firstname + ' ' + teacher.lastname }}</td>
                     <td>{{ teacher.nickname }}</td>
-                    <td><p class="phone" ng-repeat="phone in teacher.phones">{{ phone.value | displayedPhoneNumber }}</p></td>
+                    <td><p class="phone" ng-repeat="phone in teacher.contacts.phones">{{ phone.value | displayedPhoneNumber }}</p></td>
                     <td class="text-right">
                       <a href="/teachers/{{teacher.id}}" class="link-icon status-{{ teacher.status }}" title="{{ 'LABEL_VIEW' | translate }}">
                         <i class="fa fa-bars"></i>

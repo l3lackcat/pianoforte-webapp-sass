@@ -1,13 +1,14 @@
 'use strict';
 
 angular.module('pianoforteApp', [
+  'btford.socket-io',
   'ngCookies',
   'ngResource',
-  'ngSanitize',
   'ngRoute',
-  'btford.socket-io',
-  'ui.bootstrap',
-  'pascalprecht.translate'
+  'ngSanitize',
+  'pascalprecht.translate',
+  'ui.bootstrap'
+  // 'ui.select2'
 ])
   .config(function ($httpProvider, $locationProvider, $routeProvider, $translateProvider) {
     $httpProvider.interceptors.push('authInterceptor');
@@ -47,9 +48,11 @@ angular.module('pianoforteApp', [
       'LABEL.BUILDING_NAME': 'Build name',
       'LABEL.CANCEL': 'Cancel',
       'LABEL.CONTACT_INFO': 'Contact information',
+      'LABEL.CONTACT_LABEL': 'Contact label',
       'LABEL.DISTRICT': 'District',
       'LABEL.EDIT': 'Edit',
       'LABEL.EMAILS': 'Emails',
+      'LABEL.EMAIL_ADDRESS': 'Email address',
       'LABEL.FIND_TEACHERS': 'Find teachers',
       'LABEL.FIRSTNAME': 'First name',
       'LABEL.HOME': 'Home',
@@ -59,6 +62,7 @@ angular.module('pianoforteApp', [
       'LABEL.NICKNAME': 'Nick name',
       'LABEL.PERSONAL_INFO': 'Personal information',
       'LABEL.PHONES': 'Phones',
+      'LABEL.PHONE_NUMBER': 'Phone number',
       'LABEL.PROVINCE': 'Province',
       'LABEL.STATUS': 'Status',
       'LABEL.STREET_ADDRESS': 'Street address',
@@ -66,11 +70,7 @@ angular.module('pianoforteApp', [
       'LABEL.SUBMIT': 'Submit',
       'LABEL.TEL': 'Tel.',
       'LABEL.VIEW': 'View',
-      'LABEL.ZIP_CODE': 'Zip Code',
-
-      'PLACEHOLDER.EMAIL_ADDRESS': 'Email address',
-      'PLACEHOLDER.CONTACT_LABEL': 'Contact label',
-      'PLACEHOLDER.PHONE_NUMBER': 'Phone number'
+      'LABEL.ZIP_CODE': 'Zip Code'
     });
 
     $translateProvider.preferredLanguage('en');

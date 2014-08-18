@@ -9,16 +9,18 @@ var TeacherSchema = new Schema({
   firstname: String,
   lastname: String,
   nickname: String,
-  phones: [{
-    label: String,
-    value: String,
-    isPrimary: Boolean
-  }],
-  emails: [{
-    label: String,
-    value: String,
-    isPrimary: Boolean
-  }],
+  contacts: {
+    phones: [{
+      label: String,
+      value: String,
+      isPrimary: Boolean
+    }],
+    emails: [{
+      label: String,
+      value: String,
+      isPrimary: Boolean
+    }]
+  },
   status: Number
 });
 

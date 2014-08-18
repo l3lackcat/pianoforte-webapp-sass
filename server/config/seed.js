@@ -53,25 +53,27 @@ var teachers = [
     "firstname":"มณฑ์วรัชญ์",
     "lastname":"วรรณสุขนุกูล",
     "nickname":"กิ๊ฟ",
-    "phones":[  
-      {  
-        "label":"เบอร์บ้าน",
-        "value":"029628404",
-        "isPrimary":false
-      },
-      {  
-        "label":"เบอร์มือถือ",
-        "value":"0819164373",
-        "isPrimary":false
-      }
-    ],
-    "emails":[  
-      {  
-        "label":"อีเมล์",
-        "value":"monwarach@hotmail.com",
-        "isPrimary":false
-      }
-    ],
+    "contacts": {
+      "phones":[  
+        {  
+          "label":"เบอร์บ้าน",
+          "value":"029628404",
+          "isPrimary":false
+        },
+        {  
+          "label":"เบอร์มือถือ",
+          "value":"0819164373",
+          "isPrimary":false
+        }
+      ],
+      "emails":[  
+        {  
+          "label":"อีเมล์",
+          "value":"monwarach@hotmail.com",
+          "isPrimary":false
+        }
+      ]
+    },
     "status":1
   },
   {  
@@ -80,25 +82,27 @@ var teachers = [
     "firstname":"ศิรภัสสร",
     "lastname":"สัพโส",
     "nickname":"อั๋น",
-    "phones":[  
-      {  
-        "label":"เบอร์บ้าน",
-        "value":"021010588",
-        "isPrimary":false
-      },
-      {  
-        "label":"เบอร์มือถือ",
-        "value":"0818562100",
-        "isPrimary":false
-      }
-    ],
-    "emails":[  
-      {  
-        "label":"อีเมล์",
-        "value":"info@pianoforte.com",
-        "isPrimary":false
-      }
-    ],
+    "contacts": {
+      "phones":[  
+        {  
+          "label":"เบอร์บ้าน",
+          "value":"021010588",
+          "isPrimary":false
+        },
+        {  
+          "label":"เบอร์มือถือ",
+          "value":"0818562100",
+          "isPrimary":false
+        }
+      ],
+      "emails":[  
+        {  
+          "label":"อีเมล์",
+          "value":"info@pianoforte.com",
+          "isPrimary":false
+        }
+      ]
+    },
     "status":1
   },
   {  
@@ -107,20 +111,22 @@ var teachers = [
     "firstname":"รัตนวลี",
     "lastname":"โกศลธนศังกร",
     "nickname":"ลี่",
-    "phones":[  
-      {  
-        "label":"เบอร์มือถือ",
-        "value":"0890212111",
-        "isPrimary":false
-      }
-    ],
-    "emails":[  
-      {  
-        "label":"อีเมล์",
-        "value":"iam_liing@hotmail.com",
-        "isPrimary":false
-      }
-    ],
+    "contacts": {
+      "phones":[  
+        {  
+          "label":"เบอร์มือถือ",
+          "value":"0890212111",
+          "isPrimary":false
+        }
+      ],
+      "emails":[  
+        {  
+          "label":"อีเมล์",
+          "value":"iam_liing@hotmail.com",
+          "isPrimary":false
+        }
+      ]
+    },
     "status":1
   },
   {  
@@ -129,20 +135,22 @@ var teachers = [
     "firstname":"ดุจหทัย",
     "lastname":"นิยมสรวญ",
     "nickname":"ฟ่าย",
-    "phones":[  
-      {  
-        "label":"เบอร์บ้าน",
-        "value":"021010588",
-        "isPrimary":false
-      }
-    ],
-    "emails":[  
-      {  
-        "label":"อีเมล์",
-        "value":"faifaiz89@gmail.com",
-        "isPrimary":false
-      }
-    ],
+    "contacts": {
+      "phones":[  
+        {  
+          "label":"เบอร์บ้าน",
+          "value":"021010588",
+          "isPrimary":false
+        }
+      ],
+      "emails":[  
+        {  
+          "label":"อีเมล์",
+          "value":"faifaiz89@gmail.com",
+          "isPrimary":false
+        }
+      ]
+    },
     "status":4
   },
   {  
