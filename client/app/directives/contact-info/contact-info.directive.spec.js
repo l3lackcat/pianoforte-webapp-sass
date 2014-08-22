@@ -1,10 +1,10 @@
 'use strict';
 
-describe('Directive: teacherContactInfo', function () {
+describe('Directive: contactInfo', function () {
 
   // load the directive's module and view
   beforeEach(module('pianoforteApp'));
-  beforeEach(module('app/directives/teacher-contact-info/teacher-contact-info.html'));
+  beforeEach(module('app/directives/contact-info/contact-info.html'));
 
   var element, scope;
 
@@ -13,9 +13,9 @@ describe('Directive: teacherContactInfo', function () {
   }));
 
   it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<teacher-contact-info></teacher-contact-info>');
+    element = angular.element('<contact-info></contact-info>');
     element = $compile(element)(scope);
     scope.$apply();
-    expect(element.text()).toBe('this is the teacherContactInfo directive');
+    expect(element.text()).toBe('this is the contactInfo directive');
   }));
 });

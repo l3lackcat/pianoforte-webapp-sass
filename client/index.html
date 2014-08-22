@@ -13,6 +13,8 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(client) app/vendor.css -->
       <!-- bower:css -->
+      <link rel="stylesheet" href="bower_components/fullcalendar/fullcalendar.css" />
+      <link rel="stylesheet" href="bower_components/select2/select2.css" />
       <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
@@ -81,6 +83,11 @@
       <script src="bower_components/angular-route/angular-route.js"></script>
       <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
       <script src="bower_components/angular-translate/angular-translate.js"></script>
+      <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
+      <script src="bower_components/fullcalendar/fullcalendar.js"></script>
+      <script src="bower_components/angular-ui-calendar/src/calendar.js"></script>
+      <script src="bower_components/select2/select2.js"></script>
+      <script src="bower_components/angular-ui-select2/src/select2.js"></script>
       <script src="bower_components/lodash/dist/lodash.compat.js"></script>
       <script src="bower_components/angular-socket-io/socket.js"></script>
       <script src="bower_components/momentjs/moment.js"></script>
@@ -99,6 +106,7 @@
           <script src="app/admin/admin.js"></script>
           <script src="app/controllers/app/app.controller.js"></script>
           <script src="app/directives/address-info/address-info.directive.js"></script>
+          <script src="app/directives/contact-info/contact-info.directive.js"></script>
           <script src="app/directives/teacher-contact-info/teacher-contact-info.directive.js"></script>
           <script src="app/directives/teacher-personal-info/teacher-personal-info.directive.js"></script>
           <script src="app/factories/conversion-manager/conversion-manager.service.js"></script>

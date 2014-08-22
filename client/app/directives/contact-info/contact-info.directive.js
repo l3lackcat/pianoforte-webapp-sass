@@ -1,16 +1,16 @@
 'use strict';
 
 angular.module('pianoforteApp')
-  .controller('TeacherContactInfoCtrl', function ($scope) {
+  .controller('ContactInfoCtrl', function ($scope) {
     $scope.isEditMode = false;
   })
 
-  .directive('teacherContactInfo', function () {
+  .directive('contactInfo', function () {
     return {
-      templateUrl: 'app/directives/teacher-contact-info/teacher-contact-info.html',
+      templateUrl: 'app/directives/contact-info/contact-info.html',
       restrict: 'EA',
       replace: true,
-      controller: 'TeacherContactInfoCtrl',
+      controller: 'ContactInfoCtrl',
       scope: {
         contacts: '=',
         editable: '='
