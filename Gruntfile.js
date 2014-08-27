@@ -246,8 +246,9 @@ module.exports = function (grunt) {
       js: ['<%= yeoman.dist %>/public/{,*/}*.js'],
       options: {
         assetsDirs: [
-          '<%= yeoman.dist %>/public',
-          '<%= yeoman.dist %>/public/assets/images'
+          '<%= yeoman.dist %>/public/**/'
+          // '<%= yeoman.dist %>/public',
+          // '<%= yeoman.dist %>/public/assets/images'
         ],
         // This is so we update image references in our ng-templates
         patterns: {
